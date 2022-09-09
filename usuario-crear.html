@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Usuarios</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/usuario.css">
+    <link rel="stylesheet" href="css/usuario-crear.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+  </head>
+  <body>
+
+    <!-- menu-lateral -->
+    <section id="menu">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logoSML4.svg" alt="Logo">
+            </a>            
+            <h2>San Martín de Loba</h2>
+        </div>
+
+        <div class="items">
+            <!-- <li><i class="fa-solid fa-chart-pie"></i><a href="menu-sistema.html">Dashboard</a></li> -->
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#person-fill"/>
+              </svg></i><a href="usuario.html">Usuario</a></li>            
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#people-fill"/>
+              </svg></i><a href="familiar.html">Familiar</a></li>
+              <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#person-heart"/>
+              </svg></i><a href="paciente.html">Paciente</a></li>
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#capsule"/>
+              </svg></i><a href="medicamento.html">Medicamento</a></li>
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#list-check"/>
+              </svg></i></i><a href="formula.html">Fórmula</a></li>
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#house-heart-fill"/>
+              </svg></i><a href="eps.html">EPS</a></li>
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#building"/>
+              </svg></i><a href="laboratorio.html">Laboratorio</a></li>            
+        </div>
+    </section>
+
+    <!-- nav-bar -->
+    <section id="interface">
+
+        <div class="navigation">
+            <div class="n1">
+                <div>
+                    <i id="menu-btn" class="fas fa-bars"></i>
+                </div>
+                <div class="btn salir">
+                    <a href="index.html"><i><svg class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons-main/bootstrap-icons.svg#x-circle"/>
+                      </svg></i>Cerrar Sesión</a>
+                </div>
+            </div>
+
+            <div class="profile">
+                <i class="far fa-bell"></i>
+                <img src="img/alien.png" alt="" />
+            </div>
+
+        </div>
+
+        <!-- titulo dashboard -->
+        <h3 class="i-name">
+            Usuarios
+        </h3>
+
+        <!-- fila de 4 cajas -->
+        <div class="values">
+
+            <a class="vinculos" href="usuario.html">
+                <div class="val-box">
+                    
+                    <i id="v1"><svg class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons-main/bootstrap-icons.svg#file-person"/>
+                      </svg></i>
+                    <div>
+                        <h3>Perfil</h3>
+                        <span>Usuario</span>
+                    </div>
+                </div>
+            </a>
+
+            <a class="vinculos" href="usuario-crear.html">
+                <div class="val-box">
+                    
+                    <i id="v3"><svg class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons-main/bootstrap-icons.svg#person"/>
+                      </svg></i>
+                    <div>
+                        <h3>Crear</h3>
+                        <span>Nuevo usuario</span>
+                    </div>
+                </div>
+            </a>
+
+            
+            <a class="vinculos" href="usuario-listar.html">
+                <div class="val-box">
+                    <i id="v2"><svg class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons-main/bootstrap-icons.svg#card-list"/>
+                      </svg></i>
+                    <div>
+                        <h3>Listar</h3>
+                        <span>usuarios</span>
+                    </div>
+                </div>
+            </a>    
+
+            <a class="vinculos" href="#">
+                <div class="val-box">
+                    <i id="v4"><svg class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons-main/bootstrap-icons.svg#printer"/>
+                      </svg></i>
+                    <div>
+                        <h3>Exportar</h3>
+                        <span>PDF / Impresora</span>
+                    </div>
+                </div>
+            </a>
+
+            
+
+        </div>
+
+        <!-- formulario -->
+        <div class="board">
+            <h3 class="titulo-formulario">Crear Usuario</h3>
+
+            <form class="form-usuarioCrear">
+                <div class="panel">
+                    <div class="mb-3">
+                        <p>Tipo de Documento</p>
+                        <select class="form-control">
+                            <option value="cc">CC</option>
+                            <option value="ti">TI</option>
+                            <option value="ce">CE</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Número Documento</p>
+                        <input type="text" class="form-control" >
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Nombres</p>
+                        <input type="text" class="form-control" >
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Apellidos</p>
+                        <input type="text" class="form-control" id="" >
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Edad</p>
+                        <input type="number" class="form-control" id="" >
+                    </div>
+                    
+                    <div class="mb-3">
+                        <p>Correo</p>
+                        <input type="email" class="form-control" id="" >
+                    </div>
+
+                    <div class="mb-3">
+                        <p>EPS</p>
+                        <input type="text" class="form-control" id="" >
+                    </div>
+
+                    <!-- <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Verificado</label>
+                    </div> -->
+                    
+                </div>
+
+                <div class="panel">
+
+                    <div class="mb-3">
+                        <p>Celular</p>
+                        <input type="text" class="form-control" id="" >
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Teléfono familiar</p>
+                        <input type="text" class="form-control" id="" >
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Dirección domicilio</p>
+                        <input type="text" class="form-control" id="" >
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Cargo</p>
+                        <select class="form-control">
+                            <option value="cc">Enfermera Jefe</option>
+                            <option value="ti">Enfermera auxiliar</option>
+                            <option value="ce">Ayudante</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <p>País de origen</p>
+                        <select class="form-control">
+                            <option value="cc">Colombia</option>
+                            <option value="ti">Venezuela</option>
+                            <option value="ce">Ecuador</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <p>Estado</p>
+                        <select class="form-control">
+                            <option value="cc">Inactivo</option>
+                            <option value="ti">Activo</option>
+                        </select>
+                    </div>
+
+                </div>
+                
+            </form>
+            
+            <div class="btn-crearUsuario">
+                <button type="submit" class="btn btn-primary btn-formUsuario boton-modal" id="btn-crear">Crear</button>
+                <button type="submit" class="btn btn-primary btn-formUsuario" id="btn-cancelar">Cancelar</button>
+            </div>
+            
+        </div>
+        
+
+    </section>
+
+    
+
+    <!-- modal -->
+    <input type="checkbox" id="btn-modal">
+    <div class="container-modal">
+        <div class="content-modal">
+            <h2>¡Bienvenido!</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <div class="btn-confirmacion">
+                <div class="btn-aceptar">
+                    <label for="btn-modal">Aceptar</label>
+                </div>
+                <div class="btn-cancelar">
+                    <label for="btn-modal">Cancelar</label>
+                </div>    
+            </div>
+            
+        </div>
+        <label for="btn-modal" class="cerrar-modal"></label>
+    </div>
+
+    <script>
+        $("#menu-btn").click(function() {
+            $("#menu").toggleClass("active");
+        });
+    </script>
+    <script>
+        const btnCrear = document.getElementById("btn-crear");
+        btnCrear.addEventListener("click", () => {
+            window.location.href = "error400.html";
+        });
+    </script>
+    <script>
+        const btnCancelar = document.getElementById("btn-cancelar");
+        btnCancelar.addEventListener("click", () => {
+            window.location.href = "error500.html";
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista Usuarios</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/usuario.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+  </head>
+  <body>
+
+    <!-- menu-lateral -->
+    <section id="menu">
+        <div class="logo">
+            <img src="img/logoSML4.svg" alt="Logo">
+            <h2>San Martín de Loba</h2>
+        </div>
+
+        <div class="items">
+            <!-- <li><i class="fa-solid fa-chart-pie"></i><a href="menu-sistema.html">Dashboard</a></li> -->
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#person-fill"/>
+              </svg></i><a href="usuario.html">Usuario</a></li>            
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#people-fill"/>
+              </svg></i><a href="familiar.html">Familiar</a></li>
+              <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#person-heart"/>
+              </svg></i><a href="paciente.html">Paciente</a></li>
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#capsule"/>
+              </svg></i><a href="medicamento.html">Medicamento</a></li>
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#list-check"/>
+              </svg></i></i><a href="formula.html">Fórmula</a></li>
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#house-heart-fill"/>
+              </svg></i><a href="eps.html">EPS</a></li>
+            <li><i><svg class="bi" width="32" height="32" fill="currentColor">
+                <use xlink:href="icons-main/bootstrap-icons.svg#building"/>
+              </svg></i><a href="laboratorio.html">Laboratorio</a></li>            
+        </div>
+    </section>
+
+    <!-- nav-bar -->
+    <section id="interface">
+
+        <div class="navigation">
+            <div class="n1">
+                <div>
+                    <i id="menu-btn" class="fas fa-bars"></i>
+                </div>
+                <div class="btn salir">
+                    <a href="index.html"><i><svg class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons-main/bootstrap-icons.svg#x-circle"/>
+                      </svg></i>Cerrar Sesión</a>
+                </div>
+            </div>
+
+            <div class="profile">
+                <i class="far fa-bell"></i>
+                <img src="img/alien.png" alt="" />
+            </div>
+
+        </div>
+
+        <!-- titulo dashboard -->
+        <h3 class="i-name">
+            Usuarios
+        </h3>
+
+        <!-- fila de 4 cajas -->
+        <div class="values">
+
+            <a class="vinculos" href="usuario.html">
+                <div class="val-box">
+                    
+                    <i id="v1"><svg class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons-main/bootstrap-icons.svg#file-person"/>
+                      </svg></i>
+                    <div>
+                        <h3>Perfil</h3>
+                        <span>Usuario</span>
+                    </div>
+                </div>
+            </a>
+
+            <a class="vinculos" href="usuario-crear.html">
+                <div class="val-box">
+                    
+                    <i id="v3"><svg class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons-main/bootstrap-icons.svg#person"/>
+                      </svg></i>
+                    <div>
+                        <h3>Crear</h3>
+                        <span>Nuevo usuario</span>
+                    </div>
+                </div>
+            </a>
+
+            
+            <a class="vinculos" href="usuario-listar.html">
+                <div class="val-box">
+                    <i id="v2"><svg class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons-main/bootstrap-icons.svg#card-list"/>
+                      </svg></i>
+                    <div>
+                        <h3>Listar</h3>
+                        <span>usuarios</span>
+                    </div>
+                </div>
+            </a>    
+
+            <a class="vinculos" href="#">
+                <div class="val-box">
+                    <i id="v4"><svg class="bi" width="32" height="32" fill="currentColor">
+                        <use xlink:href="icons-main/bootstrap-icons.svg#printer"/>
+                      </svg></i>
+                    <div>
+                        <h3>Exportar</h3>
+                        <span>PDF / Impresora</span>
+                    </div>
+                </div>
+            </a>
+
+            
+
+        </div>
+
+
+        <!-- contenido -->
+
+        <div class="board">
+            <h3 class="titulo-formulario">Lista Usuarios</h3>
+
+            <table id="example" class="table table-striped tabla-datos" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Tipo Documento</th>
+                        <th>Número Documento</th>
+                        <th>Edad</th>
+                        <th>Correo</th>
+                        <th>Eps</th>
+                        <th>Celular</th>
+                        <th>Teléfono familiar</th>
+                        <th>Dirección</th>
+                        <th>Cargo</th>
+                        <th>País Origen</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ana</td>
+                        <td>Alero</td>
+                        <td>CC</td>
+                        <td>123456</td>
+                        <td>25</td>
+                        <td>ana@email.com</td>
+                        <td>Sanitas</td>
+                        <td>3203332211</td>
+                        <td>3114225888</td>
+                        <td>Calle 3 # 12-14</td>
+                        <td>Enfermera Auxiliar</td>
+                        <td>Colombia</td>
+                        <td>Activo</td>
+                    </tr>
+
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>CC</td>
+                        <td>123456</td>
+                        <td>28</td>
+                        <td>john@email.com</td>
+                        <td>Nueva EPS</td>
+                        <td>3203332211</td>
+                        <td>3114225888</td>
+                        <td>Calle 5 # 14-54</td>
+                        <td>Enfermero Auxiliar</td>
+                        <td>Venezuela</td>
+                        <td>Activo</td>
+                    </tr>
+
+                    <tr>
+                        <td>Juan</td>
+                        <td>Torres</td>
+                        <td>CC</td>
+                        <td>1777777</td>
+                        <td>30</td>
+                        <td>juan@email.com</td>
+                        <td>Famisanar</td>
+                        <td>3203888211</td>
+                        <td>3114225888</td>
+                        <td>Calle 3 # 12-14</td>
+                        <td>Enfermera Auxiliar</td>
+                        <td>Colombia</td>
+                        <td>Activo</td>
+                    </tr>
+
+                    <tr>
+                        <td>Slemy</td>
+                        <td>Poree</td>
+                        <td>CC</td>
+                        <td>123456</td>
+                        <td>25</td>
+                        <td>slemy@email.com</td>
+                        <td>Sanitas</td>
+                        <td>3203332211</td>
+                        <td>3114225888</td>
+                        <td>Calle 3 # 12-14</td>
+                        <td>Enfermera Jefe</td>
+                        <td>Ecuador</td>
+                        <td>Activo</td>
+                    </tr>
+                    
+                </tbody>
+                
+            </table>
+
+
+            <!-- <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Cargo</td>
+                        <td>Estado</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="people">
+                            <img src="img/alien.png" alt="">
+                            <div class="people-de">
+                                <h5>John Doe</h5>
+                                <p>john@example.com</p>
+                            </div>
+                        </td>
+
+                        <td class="people-des">
+                            <h5>Enfermero jefe</h5> -->
+                            <!-- <p>Web Dev</p> -->
+                       <!-- </td>
+
+                        <td class="active">
+                            <p>Activo</p>
+                        </td>
+
+                        <td class="role">                            
+                            <a class="boton-modal" href="#"><label for="btn-modal">Borrar</label></a>                                   
+                        </td>
+
+                        <td class="edit">
+                            <a class="boton-modal" href="#"><label for="btn-modal">Editar</label></a> 
+                        </td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td class="people">
+                            <img src="img/happy.png" alt="">
+                            <div class="people-de">
+                                <h5>Ana Alero</h5>
+                                <p>ana@example.com</p>
+                            </div>
+                        </td>
+
+                        <td class="people-des">
+                            <h5>Enfermera auxiliar</h5>
+                            
+                        </td>
+
+                        <td class="active">
+                            <p>Activo</p>
+                        </td>
+
+                        <td class="role">                            
+                            <a class="boton-modal" href="#"><label for="btn-modal">Borrar</label></a>                                   
+                        </td>
+
+                        <td class="edit">
+                            <a class="boton-modal" href="#"><label for="btn-modal">Editar</label></a> 
+                        </td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td class="people">
+                            <img src="img/angry.png" alt="">
+                            <div class="people-de">
+                                <h5>Juan Torres</h5>
+                                <p>juan@example.com</p>
+                            </div>
+                        </td>
+
+                        <td class="people-des">
+                            <h5>Enfermero auxiliar</h5>
+                            
+                        </td>
+
+                        <td class="active">
+                            <p>Activo</p>
+                        </td>
+
+                        <td class="role">                            
+                            <a class="boton-modal" href="#"><label for="btn-modal">Borrar</label></a>                                   
+                        </td>
+
+                        <td class="edit">
+                            <a class="boton-modal" href="#"><label for="btn-modal">Editar</label></a> 
+                        </td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td class="people">
+                            <img src="img/love.png" alt="">
+                            <div class="people-de">
+                                <h5>Slemy Poree</h5>
+                                <p>slemy@example.com</p>
+                            </div>
+                        </td>
+
+                        <td class="people-des">
+                            <h5>Enfermero auxiliar</h5>
+                            
+                        </td>
+
+                        <td class="active">
+                            <p>Activo</p>
+                        </td>
+
+                        <td class="role">                            
+                            <a class="boton-modal" href="#"><label for="btn-modal">Borrar</label></a>                                   
+                        </td>
+
+                        <td class="edit">
+                            <a class="boton-modal" href="#"><label for="btn-modal">Editar</label></a> 
+                        </td>
+                        
+                    </tr>
+
+
+                </tbody>
+            </table> -->
+        </div>
+
+
+        
+
+        
+
+    </section>
+
+
+    <!-- modal -->
+    <input type="checkbox" id="btn-modal">
+    <div class="container-modal">
+        <div class="content-modal">
+            <h2>¡Bienvenido!</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <div class="btn-confirmacion">
+                <div class="btn-aceptar">
+                    <label for="btn-modal">Aceptar</label>
+                </div>
+                <div class="btn-cancelar">
+                    <label for="btn-modal">Cancelar</label>
+                </div>    
+            </div>
+            
+        </div>
+        <label for="btn-modal" class="cerrar-modal"></label>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+    <script>
+        $("#menu-btn").click(function() {
+            $("#menu").toggleClass("active");
+        });
+    </script>
+  </body>
+</html>
